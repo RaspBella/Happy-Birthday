@@ -1,8 +1,11 @@
 Happy-Birthday: Happy-Birthday.c
 	cc $< -o $@
 
-README.pdf: README.ms
-	groff -ms -T pdf $< > $@
+pdf: README.ms
+	groff -ms -T pdf $< > README.$@
+
+html: README.ms
+	groff -ms -T html $< > README.$@
 
 clean:
 	rm -f Happy-Birthday
